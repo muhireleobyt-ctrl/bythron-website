@@ -1,0 +1,12 @@
+[variables]
+NIXPACKS_BUILD_CMD = "npm install --legacy-peer-deps && npm run build"
+NIXPACKS_START_CMD = "npm run start"
+
+[phases.build]
+cmds = [
+  "npm install --legacy-peer-deps",
+  "npm run build"
+]
+
+[phases.start]
+cmd = "npm run start"

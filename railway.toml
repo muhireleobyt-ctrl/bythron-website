@@ -1,0 +1,22 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "npm run start"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[build.nixpacksConfig]
+[build.nixpacksConfig.phases.setup]
+nixPkgs = ["nodejs-20_x"]
+
+[build.nixpacksConfig.phases.install]
+cmds = ["npm install --legacy-peer-deps"]
+
+[build.nixpacksConfig.phases.build]
+cmds = ["npm run build"]
+
+[build.nixpacksConfig.phases.start]
+cmd = "npm run start"
