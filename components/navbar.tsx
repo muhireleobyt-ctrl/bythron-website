@@ -32,7 +32,7 @@ export function Navbar() {
       )}
     >
       <div className="container flex h-[4.5rem] items-center justify-between py-3">
-        <Logo />
+        <Logo priority />
 
         <nav className="hidden lg:flex items-center gap-1">
           {mainNav.map((item) => (

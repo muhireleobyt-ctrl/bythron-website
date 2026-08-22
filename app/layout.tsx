@@ -7,6 +7,7 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -81,7 +82,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     alternateName: siteConfig.product,
     description: siteConfig.description,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/icon.svg`,
+    logo: `${siteConfig.url}/bythron-logo-v2.png`,
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
     address: {
@@ -125,6 +126,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </Suspense>
           <main id="main-content" className="min-h-screen pt-[4.5rem]">{children}</main>
           <Footer />
+          <WhatsAppButton />
           <Toaster richColors position="top-right" />
         </ThemeProvider>
       </body>

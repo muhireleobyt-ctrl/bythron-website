@@ -6,7 +6,9 @@ export const emailConfig = {
   demoTemplateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_DEMO || "",
   newsletterTemplateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_NEWSLETTER || "",
   publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
-  recipientEmail: process.env.NEXT_PUBLIC_RECIPIENT_EMAIL || "sales@bythron.rw",
+  // Falls back to a real, working inbox until support@bythron.tech is fully
+  // wired up as a receiving mailbox in the EmailJS connected service.
+  recipientEmail: process.env.NEXT_PUBLIC_RECIPIENT_EMAIL || "muhirelionel@gmail.com",
 };
 
 type Result = { success: true; response: unknown } | { success: false; error: unknown };

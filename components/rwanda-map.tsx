@@ -11,6 +11,11 @@ const cities = [
   { name: "Nyagatare", x: 300, y: 90, primary: false },
 ];
 
+// Country-level label, drawn with the same dot + text device as the city
+// markers above, just larger — placed in the open pocket of the outline
+// with no city marker nearby (right-of-center, mid-height).
+const countryLabel = { name: "RWANDA", x: 205, y: 255 };
+
 // Stylized, decorative outline evoking Rwanda's shape — not survey-accurate.
 const outline =
   "M120,20 L230,10 L300,60 L330,120 L310,190 L340,260 L280,330 L200,370 L120,360 L60,300 L30,220 L45,140 L20,80 Z";
@@ -70,6 +75,33 @@ export function RwandaMap({ className }: { className?: string }) {
             </motion.text>
           </g>
         ))}
+
+        <g>
+          <motion.circle
+            cx={countryLabel.x}
+            cy={countryLabel.y}
+            r={5}
+            fill="none"
+            stroke="hsl(var(--primary))"
+            strokeWidth="1.5"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 1.9, type: "spring", stiffness: 240, damping: 18 }}
+          />
+          <motion.text
+            x={countryLabel.x + 14}
+            y={countryLabel.y + 6}
+            fontSize="19"
+            fontWeight={800}
+            letterSpacing="0.05em"
+            fill="hsl(var(--foreground))"
+            initial={{ opacity: 0, x: countryLabel.x + 4 }}
+            animate={{ opacity: 1, x: countryLabel.x + 14 }}
+            transition={{ delay: 2.05, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {countryLabel.name}
+          </motion.text>
+        </g>
       </svg>
     </div>
   );

@@ -16,7 +16,8 @@ export const metadata: Metadata = {
 const channels = [
   { icon: Phone, title: "Call Us", value: siteConfig.contact.phone, href: siteConfig.contact.phoneHref },
   { icon: MessageCircle, title: "WhatsApp", value: siteConfig.contact.whatsapp, href: siteConfig.contact.whatsappHref },
-  { icon: Mail, title: "Email", value: siteConfig.contact.email, href: `mailto:${siteConfig.contact.email}` },
+  { icon: Mail, title: "General Inquiries", value: siteConfig.contact.email, href: `mailto:${siteConfig.contact.email}` },
+  { icon: Mail, title: "Support", value: siteConfig.contact.supportEmail, href: `mailto:${siteConfig.contact.supportEmail}` },
   { icon: MapPin, title: "Visit Us", value: siteConfig.contact.address, href: "#map" },
 ];
 
@@ -36,7 +37,7 @@ export default function ContactPage() {
       </section>
 
       <section className="container pb-20">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {channels.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.06}>
               <a

@@ -10,6 +10,8 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     background_color: "#F7FAFF",
     theme_color: "#0286FF",
-    icons: [{ src: "/favicon.ico", sizes: "any" }],
+    // Points at the stable public asset rather than the app-router-generated
+    // icon route, whose URL Next.js hashes internally.
+    icons: [{ src: "/bythron-logo-v2.png", sizes: "676x676", type: "image/png" }],
   };
 }
