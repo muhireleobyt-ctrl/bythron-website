@@ -15,10 +15,10 @@ export const timeline = [
 ];
 
 export const team = [
-  { name: "Eric Bythron Nkurunziza", role: "Co-Founder & CEO", initials: "EN" },
-  { name: "Sandrine Uwimana", role: "Co-Founder & CTO", initials: "SU" },
-  { name: "David Mugabo", role: "Head of Engineering", initials: "DM" },
-  { name: "Grace Niyonsaba", role: "Head of Customer Success", initials: "GN" },
+  { name: "Lionel MUHIRE", role: "Co-Founder & CEO", initials: "LM" },
+  { name: "GENO Yves Cadio", role: "Co-Founder & CTO", initials: "GY" },
+  { name: "ISHIMWE CYEZA Mireille", role: "Sales Manager", initials: "IM" },
+  { name: "Geofrey MUGABA", role: "Electrical Engineer & Technical Support", initials: "GM" },
 ];
 
 export const values = [

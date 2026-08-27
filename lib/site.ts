@@ -36,9 +36,9 @@ export const siteConfig = {
   },
   social: {
     twitter: "https://twitter.com/bythronrw",
-    linkedin: "https://linkedin.com/company/bythron",
+    linkedin: "https://www.linkedin.com/company/bythron/",
     facebook: "https://facebook.com/bythronrw",
-    instagram: "https://instagram.com/bythronrw",
+    instagram: "https://www.instagram.com/bythron_tech",
     youtube: "https://youtube.com/@bythronrw",
   },
   geo: {
