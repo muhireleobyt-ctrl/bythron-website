@@ -5,6 +5,7 @@ import {
   Apple,
   ArrowRight,
   Bell,
+  Download,
   Fuel,
   Gauge,
   Map as MapIcon,
@@ -29,6 +30,7 @@ import { DashboardMockup } from "@/components/dashboard-mockup";
 import { LiveMap } from "@/components/live-map";
 import { CtaSection } from "@/components/cta-section";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { androidRelease } from "@/lib/data/app-release";
 
 export const metadata: Metadata = {
   title: "Track IQ App — Live GPS Tracking Platform",
@@ -113,13 +115,32 @@ export default function OurAppPage() {
                 </div>
               </Reveal>
               <Reveal delay={0.4}>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <span className="flex items-center gap-2 rounded-xl border bg-card px-4 py-2.5 text-sm font-medium shadow-soft">
-                    <Apple className="h-4 w-4" /> App Store
-                  </span>
-                  <span className="flex items-center gap-2 rounded-xl border bg-card px-4 py-2.5 text-sm font-medium shadow-soft">
-                    <Smartphone className="h-4 w-4" /> Google Play
-                  </span>
+                <div className="mt-8">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <Button size="xl" className="btn-gradient border-0 text-white" asChild>
+                      {/* Plain <a download>, not next/link's <Link> — this is a
+                          same-origin static file download (public/downloads/,
+                          see lib/data/app-release.ts), not client-side route
+                          navigation. */}
+                      <a href={androidRelease.apkPath} download>
+                        <Download className="mr-1 h-4 w-4" />
+                        Download for Android
+                      </a>
+                    </Button>
+                    <span className="text-sm text-muted-foreground">
+                      v{androidRelease.version} · {androidRelease.sizeLabel} · {androidRelease.minAndroidVersion}
+                    </span>
+                  </div>
+                  {/* Honest placeholders, not clickable — neither store listing
+                      exists yet, so these say so rather than implying one does. */}
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    <span className="flex items-center gap-2 rounded-xl border bg-card px-4 py-2.5 text-sm font-medium text-muted-foreground shadow-soft">
+                      <Apple className="h-4 w-4" /> iOS — Coming soon
+                    </span>
+                    <span className="flex items-center gap-2 rounded-xl border bg-card px-4 py-2.5 text-sm font-medium text-muted-foreground shadow-soft">
+                      <Smartphone className="h-4 w-4" /> Google Play — Coming soon
+                    </span>
+                  </div>
                 </div>
               </Reveal>
             </div>
