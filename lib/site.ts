@@ -4,7 +4,7 @@ export const siteConfig = {
   tagline: "Know Every Move. Anytime. Anywhere.",
   description:
     "Bythron is Rwanda's trusted GPS tracking and location intelligence company. Our flagship platform, Track IQ, lets you monitor vehicles, motorcycles, fleets, assets, pets, and wildlife in real time — with all data securely hosted on servers inside Rwanda.",
-  url: "https://www.bythron.rw",
+  url: "https://www.bythron.tech",
   ogImage: "/opengraph-image",
   keywords: [
     "GPS tracking Rwanda",
